@@ -1,0 +1,348 @@
+{
+	"name": "DMX Advanced with fixtures",
+	"type": "DMX",
+	"path": "Protocol",
+	
+	"version": "0.1",
+	"description": "Tools to use HTP, LTP and relativ effects in chataigne with fixtures",
+	"url":"https://github.com/norbertrostaing/DMXAdvancedForChataigne",
+	"downloadURL": "https://github.com/norbertrostaing/DMXAdvancedForChataigne/archive/refs/heads/main.zip",
+	
+	"hasInput": false,
+	"hasOutput": true, 
+
+	"hideDefaultCommands": true,
+	"hideDefaultParameters": [
+	],
+	
+	"defaults": {
+	},
+	
+	"parameters": {
+	},
+	
+	"scripts": [
+		"DMXAdvanced.js"
+	],
+	
+	"values": {
+	},
+	
+	"commands": {
+		
+		"Set LTP Value":
+		{
+			"menu": "",
+			"callback": "setLTPValue",
+			"parameters": { 
+				"Fixture": {
+					"type": "String"
+				}, 
+				"Parameter": {
+					"type": "String"
+				}, 
+
+				"Data type": { 
+					"type":"Enum", 
+					"options": { 
+						"Dimmer 8bits":"i8", 
+						"Dimmer 16bits":"i16",
+						"RGB color 8bits":"rgb8", 
+						"RGB color 16bits":"rgb16" 
+					} 
+				},
+
+				"Slot": {
+					"type": "String"
+				}, 
+
+				"Value dimmer 8bits": { 
+					"type":"Float", 
+					"default": 0, 
+					"useForMapping": true, 
+					"dependency": { 
+						"source":"dataType", 
+						"value":"i8", 
+						"check":"equals", 
+						"action":"show" 
+					} 
+				}, 
+				"Value dimmer 16bits": { 
+					"type":"Float", 
+					"default": 0, 
+					"useForMapping": true, 
+					"dependency": { 
+						"source":"dataType", 
+						"value":"i16", 
+						"check":"equals", 
+						"action":"show" 
+					} 
+				}, 
+				"Value RGB 8bits": { 
+					"type":"Color", 
+					"default": [0,0,0,0], 
+					"useForMapping": true, 
+					"dependency": { 
+						"source":"dataType", 
+						"value":"rgb8", 
+						"check":"equals", 
+						"action":"show" 
+					} 
+				}, 
+				"Value RGB 16bits": { 
+					"type":"Color", 
+					"default": [0,0,0,0], 
+					"useForMapping": true, 
+					"dependency": { 
+						"source":"dataType", 
+						"value":"rgb16", 
+						"check":"equals", 
+						"action":"show" 
+					} 
+				}, 
+			}
+		},
+
+		"Set HTP Value":
+		{
+			"menu": "",
+			"callback": "setHTPValue",
+			"parameters": { 
+				"Fixture": {
+					"type": "String"
+				}, 
+				"Parameter": {
+					"type": "String"
+				}, 
+
+				"Data type": { 
+					"type":"Enum", 
+					"options": { 
+						"Dimmer 8bits":"i8", 
+						"Dimmer 16bits":"i16",
+						"RGB color 8bits":"rgb8", 
+						"RGB color 16bits":"rgb16" 
+					} 
+				},
+
+				"Slot": {
+					"type": "String"
+				}, 
+				
+				"Value dimmer 8bits": { 
+					"type":"Float", 
+					"default": 0, 
+					"useForMapping": true, 
+					"dependency": { 
+						"source":"dataType", 
+						"value":"i8", 
+						"check":"equals", 
+						"action":"show" 
+					} 
+				}, 
+				"Value dimmer 16bits": { 
+					"type":"Float", 
+					"default": 0, 
+					"useForMapping": true, 
+					"dependency": { 
+						"source":"dataType", 
+						"value":"i16", 
+						"check":"equals", 
+						"action":"show" 
+					} 
+				}, 
+				"Value RGB 8bits": { 
+					"type":"Color", 
+					"default": [0,0,0,0], 
+					"useForMapping": true, 
+					"dependency": { 
+						"source":"dataType", 
+						"value":"rgb8", 
+						"check":"equals", 
+						"action":"show" 
+					} 
+				}, 
+				"Value RGB 16bits": { 
+					"type":"Color", 
+					"default": [0,0,0,0], 
+					"useForMapping": true, 
+					"dependency": { 
+						"source":"dataType", 
+						"value":"rgb16", 
+						"check":"equals", 
+						"action":"show" 
+					} 
+				}, 
+			}
+		},
+
+		"Set FX Value":
+		{
+			"menu": "",
+			"callback": "setFXValue",
+			"parameters": { 
+				"Fixture": {
+					"type": "String"
+				}, 
+				"Parameter": {
+					"type": "String"
+				}, 
+
+				"Data type": { 
+					"type":"Enum", 
+					"options": { 
+						"Dimmer 8bits":"i8", 
+						"Dimmer 16bits":"i16",
+						"RGB color 8bits":"rgb8", 
+						"RGB color 16bits":"rgb16" 
+					} 
+				},
+
+				"Slot": {
+					"type": "String"
+				}, 
+				
+				"Value dimmer 8bits": { 
+					"type":"Float", 
+					"default": 0, 
+					"useForMapping": true, 
+					"dependency": { 
+						"source":"dataType", 
+						"value":"i8", 
+						"check":"equals", 
+						"action":"show" 
+					} 
+				}, 
+				"Value dimmer 16bits": { 
+					"type":"Float", 
+					"default": 0, 
+					"useForMapping": true, 
+					"dependency": { 
+						"source":"dataType", 
+						"value":"i16", 
+						"check":"equals", 
+						"action":"show" 
+					} 
+				}, 
+				"Value RGB 8bits": { 
+					"type":"Point3D", 
+					"default": 0, 
+					"useForMapping": true, 
+					"dependency": { 
+						"source":"dataType", 
+						"value":"rgb8", 
+						"check":"equals", 
+						"action":"show" 
+					} 
+				}, 
+				"Value RGB 16bits": { 
+					"type":"Point3D", 
+					"default": 0, 
+					"useForMapping": true, 
+					"dependency": { 
+						"source":"dataType", 
+						"value":"rgb16", 
+						"check":"equals", 
+						"action":"show" 
+					} 
+				}, 
+			}
+		},
+
+	
+
+
+		"Set Slot Level":
+		{
+			"menu": "",
+			"callback": "setSlotLevel",
+			"parameters": { 
+				"Slot": {
+					"type": "String"
+				}, 
+				"Value": { 
+					"type":"Float", 
+					"default": 1, 
+					"useForMapping": true
+				}
+			}
+		},
+
+	
+		"Clear slot":
+		{
+			"menu": "",
+			"callback": "clearSlot",
+			"parameters": { 
+				"Slot": {
+					"type": "String"
+				}
+			}
+		},
+
+		"Effect":
+		{
+			"menu": "",
+			"callback": "effect",
+			"parameters": { 
+				"Fixtures": {
+					"description" : "Fixtures names separated by coma",
+					"type": "String"
+				}, 
+
+				"Parameter": {
+					"description" : "Parameter to use",
+					"type": "String"
+				}, 
+
+				"Data type": { 
+					"type":"Enum", 
+					"options": { 
+						"Dimmer 8bits":"i8", 
+						"Dimmer 16bits":"i16",
+						"RGB color 8bits":"rgb8", 
+						"RGB color 16bits":"rgb16" 
+					} 
+				},
+
+				"Mode": {
+					"type": "Enum",
+					"options" : {
+						"LTP" : "LTP",
+						"HTP" : "HTP",
+						"FX" : "FX"
+					}
+				},
+
+				"Slot": {
+					"type": "String"
+				},
+
+				"Sequence Value": {
+					"type": "Target",
+				}, 
+
+				"Blocks of": {
+					"description" : "Effect applies to blocks of X elements (elements of the same block have the same value)",
+					"type": "Integer",
+					"min":1,
+					"default":1
+				},
+				"Wings": {
+					"description" : "Effect with blocks applies X times on the selection in one direction then another then another then another then another .... ",
+					"type": "Integer",
+					"min":1,
+					"default":1
+				}, 
+				"Groups": {
+					"description" : "Effect with blocks and wings applies X times on the selection",
+					"type": "Integer",
+					"min":1,
+					"default":1
+				}, 
+			}
+		},
+
+		
+	}
+}
